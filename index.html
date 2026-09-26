@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudySpark - Student Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span>🎓</span> StudySpark</div>
+      <nav>
+        <button class="nav-btn active" data-section="dashboard">📊 Dashboard</button>
+        <button class="nav-btn" data-section="subjects">📚 Subjects</button>
+        <button class="nav-btn" data-section="planner">🗓️ Study Planner</button>
+        <button class="nav-btn" data-section="progress">📈 Progress</button>
+        <button class="nav-btn" data-section="recommendations">💡 Recommendations</button>
+      </nav>
+      <div class="sidebar-note">Small steps every day lead to big results. 🚀</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Student Analytics</p>
+          <h1>Welcome, Student! 👋</h1>
+          <p class="muted">Turn your study data into better decisions.</p>
+        </div>
+        <button id="resetBtn" class="secondary-btn">Reset Data</button>
+      </header>
+
+      <section id="dashboard" class="section active-section">
+        <div class="cards">
+          <div class="card"><span>📚</span><small>Total Subjects</small><strong id="totalSubjects">5</strong></div>
+          <div class="card"><span>🎯</span><small>Average Marks</small><strong id="averageMarks">78%</strong></div>
+          <div class="card"><span>⏱️</span><small>Study Hours</small><strong id="totalHours">18h</strong></div>
+          <div class="card warning"><span>⚠️</span><small>Subjects to Focus</small><strong id="focusCount">2</strong></div>
+        </div>
+
+        <div class="grid-two">
+          <div class="panel">
+            <div class="panel-title"><h2>Subject-wise Marks</h2></div>
+            <canvas id="marksChart"></canvas>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><h2>Study Hours vs Marks</h2></div>
+            <canvas id="hoursChart"></canvas>
+          </div>
+        </div>
+
+        <div class="grid-three">
+          <div class="panel">
+            <h2>⚠️ Weak Subjects</h2>
+            <div id="weakSubjects"></div>
+          </div>
+          <div class="panel">
+            <h2>💡 Recommended Focus</h2>
+            <p id="recommendation" class="recommendation"></p>
+          </div>
+          <div class="panel">
+            <h2>Overall Progress</h2>
+            <div class="progress-bar"><div id="overallProgress"></div></div>
+            <strong id="progressText">72%</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="subjects" class="section">
+        <div class="section-heading">
+          <div><h2>Subjects</h2><p class="muted">Update your marks and study hours.</p></div>
+          <button id="addSubjectBtn" class="primary-btn">+ Add Subject</button>
+        </div>
+        <div id="subjectList" class="subject-list"></div>
+      </section>
+
+      <section id="planner" class="section">
+        <div class="panel">
+          <h2>🗓️ Smart Study Planner</h2>
+          <p class="muted">Create a simple plan based on your weakest subjects.</p>
+          <div id="planList"></div>
+        </div>
+      </section>
+
+      <section id="progress" class="section">
+        <div class="panel">
+          <h2>📈 Progress Tracker</h2>
+          <p class="muted">Check off your study sessions.</p>
+          <div id="taskList"></div>
+        </div>
+      </section>
+
+      <section id="recommendations" class="section">
+        <div class="panel">
+          <h2>💡 Personalized Recommendations</h2>
+          <div id="recommendationList"></div>
+        </div>
+      </section>
+
+      <footer>StudySpark • Data Analytics Hackathon • Built with HTML, CSS & JavaScript</footer>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeModal" class="close">×</button>
+      <h2>Add Subject</h2>
+      <form id="subjectForm">
+        <input id="subjectName" placeholder="Subject name" required>
+        <input id="subjectMarks" type="number" min="0" max="100" placeholder="Marks (%)" required>
+        <input id="subjectHours" type="number" min="0" step="0.5" placeholder="Study hours" required>
+        <button class="primary-btn" type="submit">Add Subject</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

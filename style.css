@@ -1,0 +1,51 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;background:#f4f7fb;color:#172033}
+button,input{font:inherit}
+button{cursor:pointer;border:0}
+.app{display:flex;min-height:100vh}
+.sidebar{width:245px;background:#102746;color:white;padding:24px 16px;display:flex;flex-direction:column}
+.brand{font-size:23px;font-weight:800;margin-bottom:35px}
+.brand span{margin-right:8px}
+nav{display:grid;gap:8px}
+.nav-btn{background:transparent;color:#d9e5f7;text-align:left;padding:13px 14px;border-radius:10px}
+.nav-btn:hover,.nav-btn.active{background:#214a7c;color:white}
+.sidebar-note{margin-top:auto;background:#17365e;padding:16px;border-radius:12px;color:#cbd9eb;font-size:13px;line-height:1.5}
+.main{flex:1;padding:30px;max-width:1500px;margin:auto;width:100%}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.eyebrow{font-size:13px;text-transform:uppercase;color:#3778c8;font-weight:700;letter-spacing:1px}
+h1{font-size:32px;margin:5px 0}
+h2{font-size:18px;margin-bottom:14px}
+.muted{color:#68758a}
+.secondary-btn,.primary-btn{padding:10px 16px;border-radius:9px;font-weight:700}
+.secondary-btn{background:white;border:1px solid #d8e0ea;color:#334155}
+.primary-btn{background:#3478d4;color:white}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px}
+.card,.panel{background:white;border:1px solid #e2e8f0;border-radius:14px;padding:20px;box-shadow:0 4px 18px rgba(20,40,70,.04)}
+.card{display:grid;grid-template-columns:35px 1fr;column-gap:8px;align-items:center}
+.card span{grid-row:span 2;font-size:25px}.card small{color:#718096}.card strong{font-size:27px}.warning{background:#fffaf0}
+.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.grid-three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.panel-title{display:flex;justify-content:space-between}
+canvas{max-height:300px}
+.section{display:none}.active-section{display:block}
+.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.subject-list{display:grid;gap:12px}
+.subject-row{background:white;padding:16px;border-radius:12px;border:1px solid #e2e8f0;display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:15px;align-items:center}
+.subject-row input{width:90px;padding:8px;border:1px solid #d6dee9;border-radius:7px}
+.delete{color:#c24141;background:#fff0f0;padding:8px 10px;border-radius:7px}
+.progress-bar{height:12px;background:#e5eaf1;border-radius:20px;overflow:hidden;margin:20px 0 10px}
+.progress-bar div{height:100%;background:#3bb98a;width:0;transition:.4s}
+.weak{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0f4}
+.recommendation{line-height:1.7;color:#42536b}
+.task{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #edf0f4}
+.task input{width:19px;height:19px}
+.task.done span{text-decoration:line-through;color:#94a3b8}
+.plan{padding:15px;background:#f7faff;border-left:4px solid #3478d4;margin:10px 0;border-radius:8px}
+.tip{padding:15px;border-bottom:1px solid #edf0f4;line-height:1.5}
+footer{text-align:center;color:#8490a3;padding:30px 0 10px;font-size:13px}
+.modal{position:fixed;inset:0;background:rgba(15,25,40,.5);display:grid;place-items:center;padding:20px}
+.hidden{display:none}.modal-box{background:white;border-radius:15px;padding:25px;width:min(420px,100%);position:relative}
+.close{position:absolute;right:15px;top:10px;background:none;font-size:28px}
+form{display:grid;gap:12px;margin-top:18px}form input{padding:12px;border:1px solid #d5dce6;border-radius:8px}
+@media(max-width:950px){.sidebar{width:190px}.cards{grid-template-columns:1fr 1fr}.grid-three{grid-template-columns:1fr}.grid-two{grid-template-columns:1fr}}
+@media(max-width:650px){.app{display:block}.sidebar{width:100%;padding:15px}.sidebar-note{display:none}nav{display:flex;overflow:auto}.nav-btn{white-space:nowrap}.main{padding:18px}.topbar{align-items:flex-start;gap:12px}.topbar h1{font-size:25px}.cards{grid-template-columns:1fr 1fr}.card{padding:14px}.subject-row{grid-template-columns:1fr 1fr}}
